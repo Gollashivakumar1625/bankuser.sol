@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract bankstructcontract{
+
+    struct user{
+
+        string name;
+        uint8 age;
+        string branch;
+        string IFSCcode;
+        uint256 accnumber;
+
+        
+
+    }
+    struct bank{
+        user bankuser;
+
+    }
+    user public user1;
+    user public user2;
+
+    function adduser() public{
+        user1 = user("shiva","kurnool","BARB0ADONIX",20,1234567890);
+        user1 = user("kumar","Adoni","KAM250A",21,7386690402);
+
+    }
+    user[] public userdatails;
+       uint[] var1;
+
+
+    function _adduser(
+    string memory_name,
+     uint8 _age,
+     string _branch,
+     string _IFSCcode,
+     uint256 _accnumber) public{
+        userlist.push(user(_name,_age,_branch,_IFSCcode,_accountnumber));
+
+    }
+    function getdetails(uint _accountnumber) public view returns(user memory){
+
+
+
+        for(uint i=0; i<userlist.length;i++){
+            if(userlist[i].accountnumber == _accountnumber){
+            return userlist[i];
+
+            }
+        }
+        return user("","","",0,0);
+     }
+
+}
